@@ -13,23 +13,14 @@ class HH:
         """edits seconds into hours and minutes"""
         hours = seconds // 3600
         minutes = (seconds % 3600) // 60
-        return f'{hours}:{minutes}'
+        return f'{hours}h:{minutes}m'
     
-    def send_btn(self, driver, value=None, location=None):
+    def send_btn(self, driver, value):
         """searches for the button by xpath then clicks on it"""
         any_btn = driver.find_element(by=By.XPATH, value=value)
         any_btn.send_keys(Keys.ENTER)
         time.sleep(3)
 
-    def decorator(func):
-        def wrapper(self, driver, value=None, location=None):
-            if location: 
-                any_field = driver.find_element(by=By.XPATH, value=location)
-                any_field.send_keys(value)
-        return wrapper
-
-
-    @decorator
     def fill_field(self, driver, value, field):
         """searches for a field by xpath then fills it in"""
         any_field = driver.find_element(by=By.XPATH, value=field)
