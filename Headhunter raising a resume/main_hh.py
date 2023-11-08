@@ -17,8 +17,8 @@ def run_app():
         hh.send_btn(driver, log_site.entrance)
         hh.send_btn(driver, log_site.with_psswrd)
 
-        hh.fill_field(driver, value=log_site.phone, location=log_site.tel_field) #authorization hh
-        hh.fill_field(driver, value=log_site.password, location=log_site.pswrd_field)
+        hh.fill_field(driver, value=log_site.phone, field=log_site.tel_field) #authorization hh
+        hh.fill_field(driver, value=log_site.password, field=log_site.pswrd_field)
         hh.send_btn(driver, log_site.log_btn)
 
         hh.send_btn(driver, hh.resume) #resume extension
