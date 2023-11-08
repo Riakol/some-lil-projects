@@ -10,7 +10,7 @@ driver = webdriver.Firefox()
 log_site = LoginWithPassword()
 hh = HH()
 
-def run_app():
+def main():
     try:
         driver.maximize_window()
         driver.get(log_site.site)
@@ -49,4 +49,5 @@ def run_app():
         driver.close()
         driver.quit()
 
-run_app()
+if __name__ == '__main__':
+    main()
